@@ -1,7 +1,7 @@
 import React, { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { Bed } from "./Bed";
+import { Character } from "./Character";
 
 function CameraRig(props) {
   const ref = useRef();
@@ -20,7 +20,7 @@ export function Scene() {
       <ambientLight intensity={0.1} />
       <directionalLight intensity={0.4} />
       <Suspense fallback={null}>
-        <Bed position={[-1, 1.5, -4]} />
+        <Character position={[0, 3, 0]} />
       </Suspense>
       <OrbitControls />
     </Canvas>
