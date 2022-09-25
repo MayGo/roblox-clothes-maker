@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Scene } from "./Scene";
+import { TextureEditorProvider } from "./TextureEditorProvider";
+import { Box, ChakraProvider, Flex } from "@chakra-ui/react";
+import { ImageSide } from "./ImageSide";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider>
+      <TextureEditorProvider>
+        <Flex h="100vh">
+          <Box w="700px">
+            <Scene />
+          </Box>
+
+          <Box flex="1">
+            <ImageSide />
+          </Box>
+        </Flex>
+      </TextureEditorProvider>
+    </ChakraProvider>
   );
 }
 
